@@ -22,11 +22,21 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("coinGecko/getstatus", views.GekoAPI_getStatus, name="getstatus")
+    path("coinGecko/getstatus", views.GekoAPI_getStatus, name="getstatus"),
+    path("coinGecko/coinlist", views.GekoAPI_coinList, name="coinlist"),
+    path("coinGecko/assetplatforms", views.GekoAPI_assetPlatforms, name="assetplatforms"),
+    path("coinGecko/coinscategories", views.GekoAPI_coinsCategories, name="coinscategories"),
+    path("coinGecko/exchangeslist", views.GekoAPI_exchangesList, name="exchangeslist"),
+    path("coinGecko/indexesview", views.GekoAPI_indexes, name="indexesview"),
+    path("coinGecko/derivativestickers", views.GekoAPI_derivatives, name="derivativestickers"),
+    path("coinGecko/nftslist", views.GekoAPI_nftsList, name="nftslist"),
+    path("coinGecko/exchangeratesoption", views.GekoAPI_exchangeRates, name="exchangeratesoption"),
+    path("coinGecko/searching", views.GekoAPI_search, name="searching"),
+    path("coinGecko/searchtrending", views.GekoAPI_searchTrending, name="searchtrending"),
+    path("coinGecko/globalview", views.GekoAPI_global, name="globalview")
+
 ]
-"""
-path("CoinGecko/", include())
-"""
+
 
 
 
