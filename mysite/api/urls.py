@@ -33,7 +33,9 @@ urlpatterns = [
     path("coinGecko/exchangeratesoption", views.GekoAPI_exchangeRates, name="exchangeratesoption"),
     path("coinGecko/searching", views.GekoAPI_search, name="searching"),
     path("coinGecko/searchtrending", views.GekoAPI_searchTrending, name="searchtrending"),
-    path("coinGecko/globalview", views.GekoAPI_global, name="globalview")
+    path("coinGecko/globalview", views.GekoAPI_global, name="globalview"),
+    path("coinGecko/simple/price", views.GekoAPI_simple_priece, name=""),
+    path("coinGecko/coins/markets", views.GekoAPI_coins_markets, name="")
 
 ]
 

@@ -4,6 +4,7 @@ from django.shortcuts import render
 
 # Create your views here.
 
+url="https://api.coingecko.com/api"
 def index(request):
     return HttpResponse("Hello, world. You're at the api index.")
 
@@ -54,7 +55,7 @@ def GekoAPI_exchangeRates(request):
 
 def GekoAPI_search(request):
     print(request.GET)
-    response= requests.get('https://api.coingecko.com/api/v3/search')
+    response= requests.get('https://api.coingecko.com/api/v3/search',params=request.GET)
 
     return HttpResponse(response.content)
 
@@ -67,6 +68,16 @@ def GekoAPI_global(request):
     response= requests.get('https://api.coingecko.com/api/v3/global')
 
     return HttpResponse(response.content)
+
+def GekoAPI_simple_priece(request):
+    response= requests.get(url+'/v3/simple/price',params=request.GET)
+
+    return HttpResponse(response.content,status= response.status_code)
+
+def GekoAPI_coins_markets(request):
+    response= requests.get(url+'/v3/coins/markets',params=request.GET)
+
+    return HttpResponse(response.content,status= response.status_code)
 
 
 
